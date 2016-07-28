@@ -200,6 +200,10 @@ var (
 	ifaceType      = defaultMapType.Elem()
 )
 
+func SetDefaultMapType(v interface{}) {
+    defaultMapType = reflect.TypeOf(v)
+}
+
 func newDecoder() *decoder {
 	d := &decoder{mapType: defaultMapType}
 	d.aliases = make(map[string]bool)
